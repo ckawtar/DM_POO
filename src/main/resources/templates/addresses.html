@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Addresses</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+          crossorigin="anonymous">
+    <style>
+        h2 {text-align: center;}
+    </style>
+</head>
+
+<div th:insert="navbar.html"></div>
+
+<body>
+<h2>Liste des addresses</h2>
+
+
+<div class="card" style="width: 150rem;" th:each="address : ${ allAddresses }">
+    <div class="card-body">
+        <p style="color:red; font-family:verdana; font-size:20px ">  Address :</p> <li style="color:blue" th:text ="${ address.content }"/> <br/>
+        <p style="color:red; font-family:verdana; font-size:20px "> Auteur : </p><li style="color:blue"  th:text ="${ address.auteur }"/><br/>
+        <p style="color:red; font-family:verdana; font-size:20px "> Date de création : </p> <li  style="color:blue" th:text ="${ address.getCreation()}"/><br/>
+    </div>
+</div>
+
+</body>
+</html>
